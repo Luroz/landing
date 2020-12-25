@@ -1,5 +1,5 @@
 import './App.css';
-import { Divider, Col, Row, Image, Button } from 'antd';
+import { Divider, Col, Row, } from 'antd';
 
 
 
