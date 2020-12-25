@@ -26,6 +26,9 @@ function App() {
       <Col span={20} offset={2}>
       <Row >
         <Col span={6}>
+          <Divider orientation="left" plain>
+            Concursos
+          </Divider>
           <div style={{ marginBottom: "15px" }}>
             <Row>
               <Col xs={8}>
@@ -76,6 +79,9 @@ function App() {
           </div>
         </Col>
         <Col span={18} >
+        <Divider orientation="left" plain>
+            Lo Recomendado para vos
+          </Divider>
           <Row gutter={[2,1]}>
               {cartas.recomendado.map((recom, index) => {
                 return(
@@ -87,7 +93,9 @@ function App() {
           </Row>
         </Col>
       </Row>
-      <Divider/>
+      <Divider orientation="left" plain>
+      Ultimas Noticias
+      </Divider>
       <Row gutter={[6,1]}>
         {cartas.ultimasNoticias.map((recom, index) => {
           return(
