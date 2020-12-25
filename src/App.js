@@ -1,101 +1,45 @@
 import './App.css';
 import { Divider, Col, Row, Image, Button } from 'antd';
-import ModuloCarta from "./components/ModuloCarta"
+
+
+
+import Concursos from "./components/Concursos";
+import CardComponent from "./components/CardComponent";
+import Title from "./components/Title";
 
 function App() {
 
 
   const cartas = {
-    recomendado: [
-      {index: 1, component: <ModuloCarta ancho={300} largo={200}/>},
-      {index: 2, component: <ModuloCarta ancho={300} largo={200}/>},
-    ],
     ultimasNoticias: [
-      {index: 1, component: <ModuloCarta ancho={200} largo={140}/>},
-      {index: 2, component: <ModuloCarta ancho={200} largo={140}/>},
-      {index: 3, component: <ModuloCarta ancho={200} largo={140}/>},
-      {index: 4, component: <ModuloCarta ancho={200} largo={140}/>},
-      {index: 5, component: <ModuloCarta ancho={200} largo={140}/>},
+      {index: 1, component: <CardComponent/>},
+      {index: 2, component: <CardComponent/>},
+      {index: 3, component: <CardComponent/>},
+      {index: 4, component: <CardComponent/>},
+      {index: 5, component: <CardComponent/>},
+      {index: 5, component: <CardComponent/>},
     ]
   }
 
   
   return (
-    <div className="App">
-    <Row>
-      <Col span={20} offset={2}>
-      <Row >
-        <Col span={6}>
-          <Divider orientation="left" plain>
-            Concursos
-          </Divider>
-          <div style={{ marginBottom: "15px" }}>
-            <Row>
-              <Col xs={8}>
-                <Image
-                  width={100}
-                  src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
-                />
-              </Col>
-              <Col xs={16}>
-                <p style={{ textAlign: "left" }}>
-                  Neque porro quisquam est qui amet, consectetur, adipisci velit...
-                </p>
-                <Button>PARTICIPAR</Button>
-              </Col>
-            </Row>
-          </div>
-          <div style={{ marginBottom: "15px" }}>
-            <Row>
-              <Col xs={8}>
-                <Image
-                  width={100}
-                  src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
-                />
-              </Col>
-              <Col xs={16}>
-                <p style={{ textAlign: "left" }}>
-                  Neque porro quisquam est qui amet, consectetur, adipisci velit...
-                </p>
-                <Button>PARTICIPAR</Button>
-              </Col>
-            </Row>
-          </div>
-          <div style={{ marginBottom: "15px" }}>
-            <Row>
-              <Col xs={8}>
-                <Image
-                  width={100}
-                  src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
-                />
-              </Col>
-              <Col xs={16}>
-                <p style={{ textAlign: "left" }}>
-                  Neque porro quisquam est qui amet, consectetur, adipisci velit...
-                </p>
-                <Button>PARTICIPAR</Button>
-              </Col>
-            </Row>
-          </div>
+    <div className="App" style={{ marginInline: "10%" }}>
+      <Row>
+        <Col md={8}>
+          <Title title="concursos" />
+          <Concursos />
+          <Concursos />
+          <Concursos />
         </Col>
-        <Col span={18} >
-        <Divider orientation="left" plain>
-            Lo Recomendado para vos
-          </Divider>
-          <Row gutter={[2,1]}>
-              {cartas.recomendado.map((recom, index) => {
-                return(
-                <Col index={index} span={10}>
-                  {recom.component}
-                </Col>
-              )}
-              )}
-          </Row>
+        <Col md={8}>
+          <CardComponent />
+        </Col>
+        <Col md={8}>
+          <CardComponent />
         </Col>
       </Row>
-      <Divider orientation="left" plain>
-      Ultimas Noticias
-      </Divider>
+      <Divider/>
+      <Title title="concursos" />
       <Row gutter={[6,1]}>
         {cartas.ultimasNoticias.map((recom, index) => {
           return(
@@ -104,8 +48,6 @@ function App() {
           </Col>
         )}
         )}
-      </Row>
-      </Col>
       </Row>
     </div>
   );
